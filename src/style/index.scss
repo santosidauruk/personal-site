@@ -15,7 +15,12 @@ body {
   color: rgba(0, 0, 0, 0.8);
   background-color: #F7F8F8;
   -webkit-font-smoothing: antialiased;
-
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
 }
 
 * {
@@ -56,6 +61,11 @@ img{
   max-width: 960px;
   padding: 20px;
   margin: 0 auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .title {
