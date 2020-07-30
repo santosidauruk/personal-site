@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: process.env.HOST + OgImage,
+          content: process.env.GATSBY_HOST + OgImage,
         },
         {
           name: `twitter:card`,
