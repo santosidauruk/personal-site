@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
         {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script> */}
       </Helmet>
+        {/* <img src={require("../images/bg-2.jpg")} className="image-bg" alt=""/> */}
         <main className="main section is-medium">{children}</main>
     </>
   )

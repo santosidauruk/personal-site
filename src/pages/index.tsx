@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Typed from "react-typed"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,12 +7,22 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <div className="hero"></div>
     <div className="container">
       <h1 className="title">
         Santo Sidauruk
       </h1>
       <h3 className="subtitle">
-        I'm a software engineer
+      {/* <Typed
+        strings={[
+            'A software engineer',
+            'A ',
+            'Search for brands']}
+        typeSpeed={50}
+        backSpeed={50}
+        backDelay={700}
+        loop /> */}
+        A software developer who loves to build beautiful platform
       </h3>
       <a className="social-media-links" target="_blank" rel="noopener noreferrer" href="https://www.github.com/santosidauruk">
         <i className="fab fa-github"></i>

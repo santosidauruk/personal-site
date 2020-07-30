@@ -1,7 +1,11 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Santo Sidauruk`,
-    description: `A frontend engineer`,
+    description: `A software developer who loves to build beautiful platform`,
     author: `Santo Sidauruk`,
   },
   plugins: [
@@ -18,13 +22,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `santo sidauruk`,
+        short_name: `santo sidauruk`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#faffed8c`,
+        theme_color: `#faffed8c`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     'gatsby-plugin-sass'
