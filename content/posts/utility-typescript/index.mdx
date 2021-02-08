@@ -1,5 +1,5 @@
 ---
-title: "7 Utility Typescript You Should Know"
+title: "7 Utility in Typescript You Should Know"
 date: 2021-02-09
 slug: "/utility-typescript-you-should-know"
 tags:
@@ -132,7 +132,7 @@ const restrictedCars: PickCars = {
 }
 ```
 
-And there is `Omit<I, K>` that does the exact opposite of `Pick<I,K`, `Omit<I,K>` constructs an interface by picking all fields in `I` and then remove `K` keys
+And there is `Omit<I, K>` that does the exact opposite of `Pick<I,K`, `Omit<I,K>` constructs an interface by picking all fields in `I` and then remove `K` keys.
 
 ```ts
 interface Cars = {
@@ -150,7 +150,7 @@ const restrictedCars: OmitCars = {
 }
 ```
 
-The 2 examples above will return the same interface since they contain "color" and "year" in our constructed type
+The 2 examples above will return the same interface since they contain "color" and "year" in our constructed type.
 
 <br/>
 
@@ -175,7 +175,7 @@ type DrinksWeHate = Exclude<DrinksExcluded, DrinkWeLike> // "kopi" | "jus"
 
 ### 6. NonNullable
 
-`NonNullable<T>` is a utility type that we can use to avoid null or undefined. 
+`NonNullable<T>` is a utility type that we can use to avoid `null` or `undefined`. 
 
 ```tsx
 type Colors = "green" | "red" | undefined | null
@@ -183,20 +183,20 @@ type Colors = "green" | "red" | undefined | null
 type CorrectColors = NonNullable<Colors> // "green" | "red"
 ```
 
-But the interesting part is, this type is only worked if you use `—strictNullChecks` flag or set `strictNullChecks: true` on your tsconfig
+But the interesting part is, this type is only worked if you use `—strictNullChecks` flag or set `strictNullChecks: true` on your tsconfig.
 
-For example, this code is using `strictNullChecks: false` , as you can see the variable can still be assigned to undefined
+For example, this code is using `strictNullChecks: false` , as you can see the variable can still be assigned to `undefined`
 
 ![strictNullChecksFalse](./strictNullChecksFalse.png)
 
-and this is using `strictNullChecks: true`, the TS compiler will tell you immediately about the error
+and this is using `strictNullChecks: true`, the TS compiler will tell you immediately about the error.
 
 ![strictNullChecksTrue](./strictNullChecksTrue.png)
 
 
 ### 7. ReturnType
 
-`ReturnType<F>` returns the return type definition of `F`. To avoid an error, remember to always fill the `F` with function. Here is some example
+`ReturnType<F>` returns the return type definition of `F`. To avoid an error, remember to always fill the `F` with function. Here is some example.
 
 ```tsx
 type stringF = ReturnType<() => string> // string

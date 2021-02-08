@@ -49,20 +49,20 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `santo-sidauruk-blog`,
-        short_name: `anto-sidauruk-blog`,
-        description: `A software engineer`,
+        short_name: `santo-sidauruk-blog`,
+        description: `A frontend developer. Love to build beautiful platform`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
         display: `standalone`,
         icons: [
           {
-            src: `/android-chrome-192x192.png`,
+            src: `/favicon.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `/android-chrome-512x512.png`,
+            src: `/favicon.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
