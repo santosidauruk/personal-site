@@ -4,36 +4,71 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Santo Sidauruk`,
-    description: `A software developer who loves to build beautiful platform`,
+    siteTitle: `Santo Sidauruk`,
+    siteTitleAlt: `Santo Sidauruk Blog`,
+    siteDescription: `A frontend developer. Love to build beautiful platform`,
+    siteHeadline: `Blog by Santo Sidauruk`,
     author: `Santo Sidauruk`,
+    siteUrl: `https://santosidauruk.com`,
+    siteLanguage: `en`,
+     // Used for og:image and must be placed inside the `static` folder
+     siteImage: `/banner.jpg`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
+      // See the theme's README for all available options
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        navigation: [
+          {
+            title: `Blog`,
+            slug: `/blog`,
+          },
+          {
+            title: `About`,
+            slug: `/about`,
+          },
+        ],
+        externalLinks: [
+          {
+            name: `Twitter`,
+            url: `https://twitter.com/santosidauruk`,
+          },
+          {
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/santo-sidauruk/`,
+          },
+          {
+            name: 'Github',
+            url: 'https://github.com/santosidauruk'
+          }
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `santo sidauruk`,
-        short_name: `santo sidauruk`,
+        name: `santo-sidauruk-blog`,
+        short_name: `anto-sidauruk-blog`,
+        description: `A software engineer`,
         start_url: `/`,
-        background_color: `#faffed8c`,
-        theme_color: `#faffed8c`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
+        background_color: `#fff`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icons: [
+          {
+            src: `/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
-    'gatsby-plugin-sass'
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
+    `gatsby-plugin-offline`
+  ].filter(Boolean),
 }
