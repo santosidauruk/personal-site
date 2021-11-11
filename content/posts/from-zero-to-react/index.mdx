@@ -1,0 +1,137 @@
+---
+title: "From Zero To React"
+date: 2018-07-10
+slug: "/from-zero-to-react"
+tags:
+    - javascript
+    - react
+description: "Typescript has been my go-to language every time I start a new project. Typescript helps us to describe objects and to make inline documentation better. One of the things I love about typescript is it already provide utility function to facilitate common type transformations. This time we are going to talk about some of these utility types that I often use everyday."
+banner: ./react.png
+---
+
+Some or most of us, maybe have already use React. A library to build user interface, React is very helpful and as my daily front end tool for six months already, I find that I love using it.
+
+When I decide to start using React, I found so many tutorials about it out there. But for me, this course in udemy is awesome. It have good explanations on the best practices and also give you great examples.
+
+Here, I will share a few things that I learned over the past 6 months using React.
+
+<br/>
+
+#### 1. React is just another library
+React is a great tool to build an user interface. Unlike Angular or Ember, it's almost impossible to build your web application only with it. You will need another library to complement React at the core.
+We can choose any library we want to compose our web application. If you don't like Redux, just use Mobx or even just context API. You don't want webpack to bundle your app? Try parcel. Or you can just use React with plain old tag scripts.
+
+<br/>
+
+#### 2. Everything in React is a component
+When you build a web app using React, imagine you are building something with lego blocks. You can build anything you want by separating the full building into a few components.
+
+Let me show you how I create our "lego blocks"
+
+```jsx
+class MyComponent extends React.Component {
+  render() {
+    return (
+      <div>Hello from component</div>
+    );
+}}
+```
+
+And this is how I use the component.
+
+```jsx
+<MyComponent />
+```
+
+Component is like HTML tag. We can use this component inside another component, like this:
+
+```jsx
+class OtherComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>This is another component</p>
+        <MyComponent />
+      </div>
+    );
+}}
+```
+
+Component is very flexible, you can reuse it again and again. You even can recompose it to create smaller components and increase your app readability.
+
+<br/>
+
+#### 3. Props and state
+##### PROPS
+This is the most difficult things I find to understand in React. There are so many different articles which explain what props and states are, which confuse me. Props is the way components "talk" to each other. It is the data that we send from parent to child component.
+
+So is it just parent to child? How do we send data from child to parent? You can use callback. We can can talk about this later. For now just remember that we can send our data from parent to child using props.
+
+This is an example of how you can use props.
+
+```jsx
+<MyComponent someProps="This is props"/>
+```
+
+And you can access our props before, like this:
+
+```jsx
+class MyComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <div>Hello from component</div>
+        <p>{this.props.someProps}</p>
+      </div>
+    );
+}}
+```
+
+Props are immutable. You must not change its value. So what if we need to change the data? We can use state.
+
+##### STATE
+
+State is the data within a component that is used to track information of the component itself. Unlike props, state may change over time. You should not change state using this.state. Always using setState to change values in your component. With setState, all of your components will get re-rendered and you don't have to handle your state manually to update your UI.
+
+This is an example of how you can use state.
+
+```jsx
+class MyComponent extends React.Component {
+  constructor(props){
+    super(props)
+      this.state = {
+        someState: 'This is our state'
+      }
+  }
+render() {
+  return (
+    <div>
+      <div>Hello from component</div>
+      <p>{this.state.someState}</p>
+      </div>
+  );
+}}
+```
+
+<br/>
+
+#### 4. Redux
+Redux is good. It is a tool to manage your Javascript application state.
+
+While it is frequently used with React. It has no relation with React. You can use it as well with another framework like Angular, Ember, or even vanilla Javascript.
+
+The idea behind Redux is to store application in one single object so that each component will be able to access the application state directly.
+
+It is tempting to try it as soon as possible. It's like the "next thing to do" after you jump into React. But, here's the thing. [You might not need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367), as its creator said it. Sometimes, you just need local state management that already included in React. You will need Redux when the time comes. Here is an article to show you when you should use Redux.
+
+<br/>
+
+---
+
+<br/>
+
+Thanks for reading this. All of the points above are just my personal experiences. Maybe some of them are different with your point of view.
+
+If you have any advices or critics, you can find me on [linkedin](https://www.linkedin.com/in/santo-sidauruk/). See you!
+
+*This article is also published on [medium](https://medium.com/@santosidauruk/from-zero-to-react-15df9b5c7e46). *

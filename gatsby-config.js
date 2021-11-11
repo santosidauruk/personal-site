@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteTitle: `Santo Sidauruk`,
-    siteTitleAlt: `Santo Sidauruk Blog`,
+    siteTitleAlt: `Santo Sidauruk`,
     siteDescription: `A frontend developer. Love to build beautiful platform`,
     siteHeadline: `Blog by Santo Sidauruk`,
     author: `Santo Sidauruk`,
@@ -52,19 +52,24 @@ module.exports = {
         short_name: `santo-sidauruk-blog`,
         description: `A frontend developer. Love to build beautiful platform`,
         start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#6B46C1`,
+        background_color: `#1f2028`,
+        theme_color: `#ffd644`,
         display: `standalone`,
         icons: [
           {
-            src: `/favicon.png`,
-            sizes: `192x192`,
-            type: `image/png`,
+              src: `/favicon-32x32`,
+              sizes: `32x32`,
+              type: `image/png`,
           },
           {
-            src: `/favicon.png`,
-            sizes: `512x512`,
-            type: `image/png`,
+              src: `/android-chrome-192x192.png`,
+              sizes: `192x192`,
+              type: `image/png`,
+          },
+          {
+              src: `/android-chrome-512x512.png`,
+              sizes: `512x512`,
+              type: `image/png`,
           },
         ],
       },
