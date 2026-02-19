@@ -31,10 +31,6 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/santosidauruk`,
-          },
-          {
             name: `LinkedIn`,
             url: `https://www.linkedin.com/in/santo-sidauruk/`,
           },
